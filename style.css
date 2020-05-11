@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main-wrapper .enter-screen {
+    /*background-color: wheat;*/
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wrapper .enter-screen > span {
+    font-size: 45px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.main-wrapper video {
+    display: none;
+    width:100%;
+    max-height: 98vh;
+}
+
+
+
+
