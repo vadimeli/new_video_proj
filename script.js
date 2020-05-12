@@ -28,8 +28,7 @@ $(".main-wrapper .enter-screen > span").click(function () {
     let myInterval = setInterval(myTimer, 1000);
 
     function myTimer() {
-        console.log("time", $("#vid-1 video")[0].currentTime);
-        if($(".wrapper #vid-1 video")[0].currentTime>=11){
+        if($(".wrapper #vid-1 video")[0].currentTime>=3){
             $(".wrapper #vid-1 video")[0].pause();
             $(".question-1").css('display', 'flex');
             myStopFunction();
@@ -44,9 +43,22 @@ $(".main-wrapper .enter-screen > span").click(function () {
 });
 
 
+// ===
+var isAnswered = false;
+
+
+$(".close-q").click(function () {
+    if(isAnswered === true){
+        $(".question-1").css('display', 'none');
+        $(".wrapper #vid-1 video")[0].play();
+    } else {
+        alert("להמשך יש לענות על השאלה")
+    }    
+});
 
 // Q - 1
 $(".question-1 > div > div > .answers > div").click(function () {
+    isAnswered = true;
    if($(this).data('answer') == true){
        $(this).css('background-color', '#39e847')
    } else {

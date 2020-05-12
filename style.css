@@ -71,6 +71,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .question-1 > div > div {
@@ -112,7 +113,12 @@ body {
 }
 
 
-
+.close-q {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
 
 
 
