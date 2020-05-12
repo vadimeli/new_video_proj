@@ -28,11 +28,100 @@ body {
     color: #ffffff;
 }
 
-.main-wrapper video {
-    display: none;
-    width:100%;
-    max-height: 98vh;
+
+.wrapper {
+    position: relative;
+    display: inline-block;
 }
+
+.wrapper #vid-1 {
+    display: none;
+}
+
+.wrapper #vid-1 video {
+    width:100vw;
+    max-height: 98vh;
+    display: block;
+}
+
+
+.my-video-dimensions {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Q - 1 */
+.question-1 {
+    width: 100vw;
+    height: 100vh;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    /*background-color: wheat;*/
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.question-1 > div {
+    background-color: #cbcbcb;
+    width: 75%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-1 > div > div {
+    width: 80%;
+    height: 80%;
+}
+
+
+.question-1 > div > div > .q-title {
+    height: 20%;
+    font-size: 2vw;
+    /*background: green;*/
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.question-1 > div > div > .answers {
+    display: flex;
+    flex-direction: column;
+    /*background: lightgoldenrodyellow;*/
+    height: 80%;
+    justify-content: space-around;
+    padding-right: 20px;
+}
+
+.question-1 > div > div > .answers > div {
+    background-color: #eaeaec;
+    height: 23%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    padding-right: 20px;
+}
+
+.question-1 > div > div > .answers > div:hover {
+    cursor: pointer;
+    background-color: #b0b0b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
