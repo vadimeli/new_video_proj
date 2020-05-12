@@ -66,8 +66,8 @@ body {
 
 .question-1 > div {
     background-color: #cbcbcb;
-    width: 75%;
-    height: 50%;
+    width: 85%;
+    height: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +81,7 @@ body {
 
 .question-1 > div > div > .q-title {
     height: 20%;
-    font-size: 2vw;
+    font-size: 2.5vw;
     /*background: green;*/
     display: flex;
     align-items: center;
@@ -102,7 +102,7 @@ body {
     height: 23%;
     display: flex;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 2vw;
     padding-right: 20px;
 }
 
