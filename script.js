@@ -130,10 +130,7 @@ $(".question-2 > div > div > .answers > div").click(function () {
 
 
 // Q - 3
-$( ".draggable").draggable();
-
-
-
+$( "#draggable" ).draggable();
 
 
 
