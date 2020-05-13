@@ -130,16 +130,8 @@ $(".question-2 > div > div > .answers > div").click(function () {
 
 
 // Q - 3
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+$('.element').draggable();
 
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
 
 
 
