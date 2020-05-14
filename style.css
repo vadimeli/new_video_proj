@@ -284,6 +284,8 @@ body {
     font-size: 2vw;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+    margin: 0 auto;
 }
 
 

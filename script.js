@@ -132,10 +132,7 @@ $(".question-2 > div > div > .answers > div").click(function () {
 // Q - 3
 $( ".draggable" ).draggable({
     containment: ".question-3 > div",
-    stop: function (event, ui) {
-        // $(this).draggable({ revert: true });
-        
-    }
+    revert: true
 });
 
 $( ".droppable" ).droppable({
@@ -147,6 +144,14 @@ $( ".droppable" ).droppable({
         if(dragData === dropData){
             console.log("GOOD!");
             $(ui.helper[0]).draggable({ revert: false });
+            ui.draggable.position({
+                my: "center",
+                at: "center",
+                of: $(this),
+                using: function(pos) {
+                    $(this).animate(pos, "slow", "linear");
+                }
+            });
         } else {
             $(ui.helper[0]).draggable({ revert: true });
         }
