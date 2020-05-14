@@ -1,6 +1,8 @@
 function defaultResize(){
     $('.main-wrapper').css('height', window.innerHeight + 'px');
     $('.wrapper div video').css('max-height', window.innerHeight + 'px');
+
+    $('.question-1, .question-2, .question-3 ').css('max-height', window.innerHeight + 'px');
 }
 
 $(window).resize(function(){
