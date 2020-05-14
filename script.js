@@ -199,14 +199,26 @@ $( ".droppable" ).droppable({
 });
 
 $(".question-3 > div > div > .answers > .check-answer").click(function () {
+    let isAllCorrect = true;
     $(".question-3 > div > div > .answers > span").each(function () {
         if($(this).data('answer') === 'true'){
             $(this).css('border', '3px solid green');
         } else {
             $(this).css('border', '3px solid red');
+            isAllCorrect = false;
         }
     });
+
     isAnswered = true;
+
+    if(isAllCorrect === true){
+        $(".question-3 > div > div > .answers > .check-answer").css('display', 'none');
+    } else {
+        $(".question-3 > div > div > .answers > .correct-answer").css('display', 'flex');
+    }
 });
 
-
+$(".question-3 > div > div > .answers > .correct-answer").click(function () {
+    $(".question-3 > div > div > .answers").html('');
+    $(".question-3 > div > div > .table-wrap > div > span > span").css('display', 'block');
+});

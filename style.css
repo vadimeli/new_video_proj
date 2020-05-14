@@ -272,11 +272,10 @@ body {
     font-weight: bold;
 }
 
-/*.question-3 > div > div > .table-wrap > div > span:nth-child(1) {*/
-    /**/
-/*}*/
-
-
+.question-3 > div > div > .table-wrap > div > span > span {
+    color: green;
+    display: none;
+}
 
 
 .question-3 > div > div > .answers {
@@ -308,6 +307,19 @@ body {
     display: none;
     position: absolute;
     background: #00a2f3;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 40px;
+}
+
+.question-3 > div > div > .answers > .correct-answer {
+    display: none;
+    position: absolute;
+    background: #3c9266;
     color: #ffffff;
     justify-content: center;
     align-items: center;
