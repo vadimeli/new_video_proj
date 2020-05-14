@@ -7,6 +7,7 @@ function defaultResize(){
 
 $(window).resize(function(){
     defaultResize();
+    changeQ3SpotsPosition();
 });
 
 
@@ -142,6 +143,22 @@ $(".question-2 > div > div > .answers > div").click(function () {
 
 
 // Q - 3
+let q3spotsPosition = [];
+function changeQ3SpotsPosition(){
+    if(q3spotsPosition.length !== 0){
+        for(let i = 0; i < q3spotsPosition.length; i++){
+            q3spotsPosition[i][0].draggable.position({
+                my: "center",
+                at: "center",
+                of: q3spotsPosition[i][1],
+                using: function(pos) {
+                    $(this).animate(pos, "fast", "linear");
+                }
+            });
+        }
+    }
+}
+
 $( ".draggable" ).draggable({
     containment: ".question-3 > div",
     // revert: true
@@ -149,6 +166,7 @@ $( ".draggable" ).draggable({
 
 $( ".droppable" ).droppable({
     drop: function( event, ui ) {
+        q3spotsPosition.push([ui, $(this)]);
         let dragData = $(ui.helper[0]).data('name');
         let dropData = $(this).data('name');
         ui.draggable.position({

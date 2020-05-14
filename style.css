@@ -215,7 +215,8 @@ body {
     background-color: rgba(43, 51, 63, 0.7);
     position: absolute;
     top: 0;
-    display: none;
+    /*display: none;*/
+    display: flex;
     z-index: 100;
 }
 
