@@ -130,7 +130,27 @@ $(".question-2 > div > div > .answers > div").click(function () {
 
 
 // Q - 3
-$( "#draggable" ).draggable();
+$( ".draggable" ).draggable({
+    containment: ".question-3 > div",
+    stop: function (event, ui) {
+        // $(this).draggable({ revert: true });
+        
+    }
+});
 
+$( ".droppable" ).droppable({
+    drop: function( event, ui ) {
+        let dragData = $(ui.helper[0]).data('name');
+        let dropData = $(this).data('name');
+        console.log(dragData);
+        console.log(dropData);
+        if(dragData === dropData){
+            console.log("GOOD!");
+            $(ui.helper[0]).draggable({ revert: false });
+        } else {
+            $(ui.helper[0]).draggable({ revert: true });
+        }
+    }
+});
 
 

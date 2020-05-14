@@ -201,7 +201,7 @@ body {
     background-color: rgba(43, 51, 63, 0.7);
     position: absolute;
     top: 0;
-    display: none;
+    display: flex;
     z-index: 100;
 }
 
@@ -257,6 +257,11 @@ body {
     font-weight: bold;
 }
 
+/*.question-3 > div > div > .table-wrap > div > span:nth-child(1) {*/
+    /**/
+/*}*/
+
+
 
 
 .question-3 > div > div > .answers {
@@ -278,6 +283,7 @@ body {
     flex-basis: 15%;
     font-size: 2vw;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
