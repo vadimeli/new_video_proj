@@ -49,6 +49,10 @@ function continueVideoPlay(qNumber) {
             $(".question-2").css('display', 'none');
             playVideoWithTimeCount(myNumber+1, 7);
             break;
+        case 3:
+            $(".question-3").css('display', 'none');
+            playVideoWithTimeCount(myNumber+1, 10);
+            break;
         default:
             $(".question-"+myNumber).css('display', 'none');
             $(".wrapper #vid-1 video")[0].play();
@@ -132,30 +136,51 @@ $(".question-2 > div > div > .answers > div").click(function () {
 // Q - 3
 $( ".draggable" ).draggable({
     containment: ".question-3 > div",
-    revert: true
+    // revert: true
 });
 
 $( ".droppable" ).droppable({
     drop: function( event, ui ) {
         let dragData = $(ui.helper[0]).data('name');
         let dropData = $(this).data('name');
-        console.log(dragData);
-        console.log(dropData);
+        ui.draggable.position({
+            my: "center",
+            at: "center",
+            of: $(this),
+            using: function(pos) {
+                $(this).animate(pos, "slow", "linear");
+            }
+        });
         if(dragData === dropData){
-            console.log("GOOD!");
-            $(ui.helper[0]).draggable({ revert: false });
-            ui.draggable.position({
-                my: "center",
-                at: "center",
-                of: $(this),
-                using: function(pos) {
-                    $(this).animate(pos, "slow", "linear");
-                }
-            });
+            $(ui.helper[0]).data('answer', 'true');
         } else {
-            $(ui.helper[0]).draggable({ revert: true });
+            $(ui.helper[0]).data('answer', 'false');
+        }
+
+        $(ui.helper[0]).data('spot', 'true');
+
+        // show check button if all spots used
+        let isSpotsUsed = true;
+        $(".question-3 > div > div > .answers > span").each(function () {
+           if($(this).data('spot') === false){
+               isSpotsUsed = false;
+           }
+        });
+        if(isSpotsUsed === true){
+            $(".question-3 > div > div > .answers > .check-answer").css('display', 'flex');
         }
     }
+});
+
+$(".question-3 > div > div > .answers > .check-answer").click(function () {
+    $(".question-3 > div > div > .answers > span").each(function () {
+        if($(this).data('answer') === 'true'){
+            $(this).css('border', '3px solid green');
+        } else {
+            $(this).css('border', '3px solid red');
+        }
+    });
+    isAnswered = true;
 });
 
 
