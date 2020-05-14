@@ -110,7 +110,8 @@ body {
 
 .question-1 > div > div > .answers > div > img {
     position: absolute;
-    left: 2vw;
+    left: 2%;
+    width: 2vw;
 }
 
 .question-1 > div > div > .answers > div:hover {
@@ -186,7 +187,8 @@ body {
 
 .question-2 > div > div > .answers > div > img {
     position: absolute;
-    left: 2vw;
+    left: 2%;
+    width: 2vw;
 }
 
 .question-2 > div > div > .answers > div:hover {
