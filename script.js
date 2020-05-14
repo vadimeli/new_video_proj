@@ -105,15 +105,15 @@ $(".close-q").click(function () {
 $(".question-1 > div > div > .answers > div").click(function () {
     isAnswered = true;
    if($(this).data('answer') == true){
-       $(this).css('background-color', '#39e847');
+       $(this).css('background-color', '#aae322');
        $(this).append('<img src="assets/images/right.png"/>');
    } else {
        $(".question-1 > div > div > .answers > div").each(function () {
            if($(this).data('answer') == true){
-               $(this).css('background-color', '#39e847');
+               $(this).css('background-color', '#aae322');
                $(this).append('<img src="assets/images/right.png"/>');
            } else {
-               $(this).css('background-color', '#ff0018');
+               $(this).css('background-color', '#f46b6b');
                $(this).append('<img src="assets/images/wrong.png"/>');
            }
        })
@@ -124,15 +124,15 @@ $(".question-1 > div > div > .answers > div").click(function () {
 $(".question-2 > div > div > .answers > div").click(function () {
     isAnswered = true;
     if($(this).data('answer') == true){
-        $(this).css('background-color', '#39e847');
+        $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
     } else {
         $(".question-2 > div > div > .answers > div").each(function () {
             if($(this).data('answer') == true){
-                $(this).css('background-color', '#39e847');
+                $(this).css('background-color', '#aae322');
                 $(this).append('<img src="assets/images/right.png"/>');
             } else {
-                $(this).css('background-color', '#ff0018');
+                $(this).css('background-color', '#f46b6b');
                 $(this).append('<img src="assets/images/wrong.png"/>');
             }
         })
