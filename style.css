@@ -105,6 +105,12 @@ body {
     align-items: center;
     font-size: 2vw;
     padding-right: 20px;
+    position: relative;
+}
+
+.question-1 > div > div > .answers > div > img {
+    position: absolute;
+    left: 2vw;
 }
 
 .question-1 > div > div > .answers > div:hover {
@@ -175,6 +181,12 @@ body {
     align-items: center;
     font-size: 2vw;
     padding-right: 20px;
+    position: relative;
+}
+
+.question-2 > div > div > .answers > div > img {
+    position: absolute;
+    left: 2vw;
 }
 
 .question-2 > div > div > .answers > div:hover {
