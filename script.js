@@ -152,7 +152,7 @@ function changeQ3SpotsPosition(){
                 at: "center",
                 of: q3spotsPosition[i][1],
                 using: function(pos) {
-                    $(this).animate(pos, "fast", "linear");
+                    $(this).css(pos);
                 }
             });
         }
