@@ -24,13 +24,22 @@
             >
                 <source src="./assets/video/main_movie.mp4" type="video/mp4" />
             </video>
+            <img class="play-extra-video" data-video-number="1" src="assets/images/play.png" />
         </div>
+
+        <div id="extra-videos">
+            <video autoplay playsinline
+                   id="my-video"
+                   class="video-js"
+                   controls
+                   preload="auto"
+                   data-setup="{}"
+                   onended="videoEnded()" >
+                <source src="./assets/video/movie_a.mp4" type="video/mp4" />
+            </video>
+        </div>
+
     </div>
-
-
-    <!--<video controls playsinline>-->
-        <!--<source src="./assets/video/main_movie.mp4" type="video/mp4" />-->
-    <!--</video>-->
 
 </div>
 
@@ -50,7 +59,6 @@
         <img class="close-q" src="assets/images/x.png" data-question="1"/>
     </div>
 </div>
-
 
 
 <div class="question-2">
@@ -109,6 +117,23 @@
         <img class="close-q" src="assets/images/x.png" data-question="3"/>
     </div>
 </div>
+
+
+<div class="question-7">
+    <div>
+        <div>
+            <div class="q-title">מהי חבלה?</div>
+            <div class="answers">
+                <div data-answer="false">הריסה במטרה לעכב את פעולת האויב</div>
+                <div data-answer="false">הריסה במטרה לסייע לפעולת לחימה של כוחותינו</div>
+                <div data-answer="true">הריסה במטרה לעכב את פעולת האויב או במטרה לסייע לפעולת לחימה של כוחותינו</div>
+            </div>
+        </div>
+        <img class="close-q" src="assets/images/x.png" data-question="1"/>
+    </div>
+</div>
+
+
 
 
 

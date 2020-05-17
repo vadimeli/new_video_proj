@@ -51,6 +51,34 @@ body {
 }
 
 
+/* Extra Video */
+.play-extra-video {
+    position: absolute;
+    z-index: 300;
+    top: 42%;
+    right: 12%;
+    width: 15%;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper #extra-videos {
+    display: none;
+}
+
+.wrapper #extra-videos video {
+    width:100vw;
+    max-height: 98vh;
+    display: block;
+}
+
+/*====================*/
+
+
+
+
+
+
 /* Q - 1 */
 .question-1 {
     width: 100vw;
@@ -338,7 +366,81 @@ body {
 }
 
 
+/* Q - 7 */
+.question-7 {
+    width: 100vw;
+    height: 100vh;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(43, 51, 63, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    z-index: 100;
+}
 
+.question-7 > div {
+    background-color: #ffffff;
+    width: 85%;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.question-7 > div > div {
+    width: 80%;
+    height: 80%;
+}
+
+
+.question-7 > div > div > .q-title {
+    height: 20%;
+    font-size: 2.5vw;
+    /*background: green;*/
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.question-7 > div > div > .answers {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-around;
+    padding-right: 20px;
+}
+
+.question-7 > div > div > .answers > div {
+    background-color: #e6e6e6;
+    height: 23%;
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+    padding-right: 20px;
+    position: relative;
+}
+
+.question-7 > div > div > .answers > div > img {
+    position: absolute;
+    left: 2%;
+    width: 2vw;
+}
+
+.question-7 > div > div > .answers > div:hover {
+    cursor: pointer;
+    background-color: #b0b0b9;
+}
+
+
+.question-7 .close-q {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
 
 
 
