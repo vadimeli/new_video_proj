@@ -1,14 +1,10 @@
+var currentQuestionNumber = 0;
+
 function defaultResize(){
     $('.main-wrapper').css('height', window.innerHeight + 'px');
     $('.wrapper div video').css('max-height', window.innerHeight + 'px');
 
-    // // extra
-    // $('.extra-videos').css('height', window.innerHeight + 'px');
-    // $('.extra-videos video').css('max-height', window.innerHeight + 'px');
-    // //=====
-
-
-    $('.question-1, .question-2, .question-3 ').css('max-height', window.innerHeight + 'px');
+    $('.question-1, .question-2, .question-3, .question-7 ').css('max-height', window.innerHeight + 'px');
 }
 
 $(window).resize(function(){
@@ -33,7 +29,7 @@ $(".main-wrapper .enter-screen > span").click(function () {
 
     function myTimer() {
         console.log($(".wrapper #vid-1 video")[0].currentTime);
-        if($(".wrapper #vid-1 video")[0].currentTime>=3 && $(".wrapper #vid-1 video")[0].currentTime<=4){
+        if($(".wrapper #vid-1 video")[0].currentTime>=131 && $(".wrapper #vid-1 video")[0].currentTime<=132){
             $(".wrapper #vid-1 video")[0].pause();
             $(".question-1").css('display', 'flex');
             myStopFunction();
@@ -47,38 +43,96 @@ $(".main-wrapper .enter-screen > span").click(function () {
 
 });
 
+// On Play
+$(".wrapper #vid-1 video").on("playing", function (e) {
+    if($(".wrapper #vid-1 video")[0].currentTime >= 365 && $(".wrapper #vid-1 video")[0].currentTime <= 366){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(4);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime >= 697 && $(".wrapper #vid-1 video")[0].currentTime <= 698){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(5);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime >= 901 && $(".wrapper #vid-1 video")[0].currentTime <= 902){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(6);
+    }
+
+
+});
+
+// On Seek
+$(".wrapper #vid-1 video").on("seeked", function (e) {
+    if($(".wrapper #vid-1 video")[0].currentTime < 131){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(0);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime < 365){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(2);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime < 541){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(3);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime < 697){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(4);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime < 901){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(5);
+    }
+    if($(".wrapper #vid-1 video")[0].currentTime < 903){
+        $(".play-extra-video").css('display', 'none');
+        continueVideoPlay(6);
+    }
+});
+
 
 function continueVideoPlay(qNumber) {
     let myNumber = parseInt(qNumber);
+    currentQuestionNumber = qNumber;
     switch(myNumber) {
+        case 0:
+            playVideoWithTimeCount(myNumber+1, 131, null);
+            break;
         case 1:
             $(".question-1").css('display', 'none');
-            playVideoWithTimeCount(myNumber+1, 7, null);
+            $(".question-2").css('display', 'flex');
             break;
         case 2:
             $(".question-2").css('display', 'none');
-            playVideoWithTimeCount(myNumber+1, 12, null);
+            playVideoWithTimeCount(myNumber+1, 365, null);
             break;
         case 3:
             $(".question-3").css('display', 'none');
-            playVideoWithTimeCount(myNumber+1, 20, 1);
+            playVideoWithTimeCount(myNumber+1, 541, 1);
             break;
         case 4:
-            playVideoWithTimeCount(myNumber+1, 25, 2);
+            playVideoWithTimeCount(myNumber+1, 697, 2);
             break;
         case 5:
-            playVideoWithTimeCount(myNumber+1, 30, 3);
+            playVideoWithTimeCount(myNumber+1, 901, 3);
             break;
         case 6:
-            playVideoWithTimeCount(myNumber+1, 35, null);
+            playVideoWithTimeCount(myNumber+1, 903, null);
             break;
         case 7:
             $(".question-7").css('display', 'none');
-            playVideoWithTimeCount(myNumber+1, 40, null);
+            $(".question-8").css('display', 'flex');
             break;
         case 8:
             $(".question-8").css('display', 'none');
-            playVideoWithTimeCount(myNumber+1, 45, null);
+            $(".question-9").css('display', 'flex');
+            break;
+        case 9:
+            $(".question-9").css('display', 'none');
+            $(".question-10").css('display', 'flex');
+            break;
+        case 10:
+            $(".question-10").css('display', 'none');
+            $(".question-11").css('display', 'flex');
             break;
         default:
             $(".question-"+myNumber).css('display', 'none');
@@ -291,13 +345,13 @@ $(".question-3 > div > div > .answers > .correct-answer").click(function () {
 
 
 // Q - 7
-$(".question-2 > div > div > .answers > div").click(function () {
+$(".question-7 > div > div > .answers > div").click(function () {
     isAnswered = true;
     if($(this).data('answer') == true){
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
     } else {
-        $(".question-2 > div > div > .answers > div").each(function () {
+        $(".question-7 > div > div > .answers > div").each(function () {
             if($(this).data('answer') == true){
                 $(this).css('background-color', '#aae322');
                 $(this).append('<img src="assets/images/right.png"/>');
