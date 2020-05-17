@@ -152,7 +152,7 @@ function playVideoWithTimeCount(qNumber, time, videoNumber) {
         console.log($(".wrapper #vid-1 video")[0].currentTime);
         if($(".wrapper #vid-1 video")[0].currentTime>=time && $(".wrapper #vid-1 video")[0].currentTime<=time+2){
             $(".wrapper #vid-1 video")[0].pause();
-            if(videoNumber === null){
+            if(videoNumber === null || typeof videoNumber === 'undefined'){
                 $(".question-"+qNumber).css('display', 'flex');
             } else {
                 $(".play-extra-video").data('video-number', videoNumber);
