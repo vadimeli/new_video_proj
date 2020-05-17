@@ -443,6 +443,239 @@ body {
 }
 
 
+/* Q - 8 */
+.question-8 {
+    width: 100vw;
+    height: 100vh;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(43, 51, 63, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    z-index: 100;
+}
+
+.question-8 > div {
+    background-color: #ffffff;
+    width: 85%;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.question-8 > div > div {
+    width: 80%;
+    height: 80%;
+}
+
+
+.question-8 > div > div > .q-title {
+    height: 20%;
+    font-size: 2.5vw;
+    /*background: green;*/
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.question-8 > div > div > .answers {
+    display: flex;
+    /*flex-direction: column;*/
+    height: 80%;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.question-8 > div > div > .answers > div {
+    display: flex;
+    flex-direction: column;
+    /*height: 80%;*/
+    justify-content: space-around;
+    /*padding-right: 20px;*/
+    flex-basis: 45%;
+}
+
+.question-8 > div > div > .answers > div > div {
+    background-color: #e6e6e6;
+    height: 18%;
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+    padding-right: 20px;
+    position: relative;
+}
+
+.question-8 > div > div > .answers > div > div > img {
+    position: absolute;
+    left: 2%;
+    width: 2vw;
+}
+
+.question-8 > div > div > .answers > div > div:hover {
+    cursor: pointer;
+    background-color: #b0b0b9;
+}
+
+
+.question-8 .close-q {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+
+
+
+/* Q - 9 */
+.question-9 {
+    width: 100vw;
+    height: 100vh;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(43, 51, 63, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    /*display: flex;*/
+    z-index: 100;
+}
+
+.question-9 > div {
+    background-color: #ffffff;
+    width: 85%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.question-9 > div > div {
+    width: 80%;
+    height: 80%;
+}
+
+
+.question-9 > div > div > .q-title {
+    height: 20%;
+    font-size: 2.5vw;
+    /*background: green;*/
+    display: flex;
+    align-items: center;
+    /*padding-right: 20px;*/
+}
+
+.question-9 > div > div > .table-wrap {
+    height: 20%;
+    /* padding-right: 20px; */
+    /*border: 1px solid #000000;*/
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+
+
+
+.question-9 > div > div > .table-wrap > span {
+    border-bottom: 1px solid #000000;
+    flex-basis: 25%;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.question-9 > div > div > .table-wrap > span > span {
+    color: green;
+    display: none;
+}
+
+
+.question-9 > div > div > .answers {
+    height: 50%;
+    /*padding-right: 20px;*/
+    /*border: 1px solid #000000;*/
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.question-9 > div > div > .answers > span {
+    /*border: 1px solid #000000;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    flex-basis: 15%;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+.question-9 > div > div > .answers > .check-answer {
+    display: none;
+    position: absolute;
+    background: #00a2f3;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 40px;
+}
+
+.question-9 > div > div > .answers > .correct-answer {
+    display: none;
+    position: absolute;
+    background: #3c9266;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 40px;
+}
+
+
+.question-9 .close-q {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

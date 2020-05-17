@@ -10,6 +10,7 @@ function defaultResize(){
 $(window).resize(function(){
     defaultResize();
     changeQ3SpotsPosition();
+    changeQ9SpotsPosition();
 });
 
 
@@ -364,7 +365,112 @@ $(".question-7 > div > div > .answers > div").click(function () {
 });
 
 
+// Q - 8
+let numberOfCurrectQ8 = 0;
+$(".question-8 > div > div > .answers > div > div").click(function () {
+    if($(this).data('answer') == true){
+        numberOfCurrectQ8++;
+        console.log(numberOfCurrectQ8);
+        if(numberOfCurrectQ8 === 5){
+            isAnswered = true;
+        }
+        $(this).css('background-color', '#aae322');
+        $(this).append('<img src="assets/images/right.png"/>');
+    } else {
+        isAnswered = true;
+        $(".question-8 > div > div > .answers > div > div").each(function () {
+            if($(this).data('answer') == true){
+                $(this).css('background-color', '#aae322');
+                $(this).append('<img src="assets/images/right.png"/>');
+            } else {
+                $(this).css('background-color', '#f46b6b');
+                $(this).append('<img src="assets/images/wrong.png"/>');
+            }
+        })
+    }
+});
 
+
+// Q - 3
+let q9spotsPosition = [];
+function changeQ9SpotsPosition(){
+    if(q9spotsPosition.length !== 0){
+        for(let i = 0; i < q9spotsPosition.length; i++){
+            q9spotsPosition[i][0].draggable.position({
+                my: "center",
+                at: "center",
+                of: q9spotsPosition[i][1],
+                using: function(pos) {
+                    $(this).css(pos);
+                }
+            });
+        }
+    }
+}
+
+$( ".draggable" ).draggable({
+    containment: ".question-9 > div",
+    // revert: true
+});
+
+$( ".droppable" ).droppable({
+    drop: function( event, ui ) {
+        q9spotsPosition.push([ui, $(this)]);
+        let dragData = $(ui.helper[0]).data('name');
+        let dropData = $(this).data('name');
+        ui.draggable.position({
+            my: "center",
+            at: "center",
+            of: $(this),
+            using: function(pos) {
+                $(this).animate(pos, "slow", "linear");
+            }
+        });
+        if(dragData === dropData){
+            $(ui.helper[0]).data('answer', 'true');
+        } else {
+            $(ui.helper[0]).data('answer', 'false');
+        }
+
+        $(ui.helper[0]).data('spot', 'true');
+
+        // show check button if all spots used
+        let isSpotsUsed = true;
+        $(".question-9 > div > div > .answers > span").each(function () {
+            if($(this).data('spot') === false){
+                isSpotsUsed = false;
+            }
+        });
+        if(isSpotsUsed === true){
+            $(".question-9 > div > div > .answers > .check-answer").css('display', 'flex');
+        }
+    }
+});
+
+$(".question-9 > div > div > .answers > .check-answer").click(function () {
+    let isAllCorrect = true;
+    $(".question-9 > div > div > .answers > span").each(function () {
+        if($(this).data('answer') === 'true'){
+            $(this).css('color', 'green');
+        } else {
+            $(this).css('color', 'red');
+            isAllCorrect = false;
+        }
+    });
+
+    isAnswered = true;
+
+    if(isAllCorrect === true){
+        $(".question-9 > div > div > .answers > .check-answer").css('display', 'none');
+    } else {
+        $(".question-9 > div > div > .answers > .correct-answer").css('display', 'flex');
+    }
+});
+
+$(".question-9 > div > div > .answers > .correct-answer").click(function () {
+    $(".question-9 > div > div > .answers").html('');
+    $(".question-9 > div > div > .table-wrap > span > span").css('display', 'block');
+});
 
 
 
