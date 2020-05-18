@@ -46,7 +46,7 @@ $(".main-wrapper .enter-screen > span").click(function () {
 
 // On Play
 $(".wrapper #vid-1 video").on("playing", function (e) {
-    if($(".wrapper #vid-1 video")[0].currentTime >= 365 && $(".wrapper #vid-1 video")[0].currentTime <= 366){
+    if($(".wrapper #vid-1 video")[0].currentTime >= 541 && $(".wrapper #vid-1 video")[0].currentTime <= 542){
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(4);
     }
@@ -65,26 +65,32 @@ $(".wrapper #vid-1 video").on("playing", function (e) {
 // On Seek
 $(".wrapper #vid-1 video").on("seeked", function (e) {
     if($(".wrapper #vid-1 video")[0].currentTime < 131){
+        console.log('AAAAAAAAAAAAAA', 131);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(0);
     }
-    if($(".wrapper #vid-1 video")[0].currentTime < 365){
+    if($(".wrapper #vid-1 video")[0].currentTime < 365 && $(".wrapper #vid-1 video")[0].currentTime > 132){
+        console.log('AAAAAAAAAAAAAA', 365);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(2);
     }
-    if($(".wrapper #vid-1 video")[0].currentTime < 541){
+    if($(".wrapper #vid-1 video")[0].currentTime < 541 && $(".wrapper #vid-1 video")[0].currentTime > 366){
+        console.log('AAAAAAAAAAAAAA', 541);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(3);
     }
-    if($(".wrapper #vid-1 video")[0].currentTime < 697){
+    if($(".wrapper #vid-1 video")[0].currentTime < 697 && $(".wrapper #vid-1 video")[0].currentTime > 542){
+        console.log('AAAAAAAAAAAAAA', 697);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(4);
     }
-    if($(".wrapper #vid-1 video")[0].currentTime < 901){
+    if($(".wrapper #vid-1 video")[0].currentTime < 901 && $(".wrapper #vid-1 video")[0].currentTime > 697){
+        console.log('AAAAAAAAAAAAAA', 901);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(5);
     }
-    if($(".wrapper #vid-1 video")[0].currentTime < 903){
+    if($(".wrapper #vid-1 video")[0].currentTime < 903 && $(".wrapper #vid-1 video")[0].currentTime > 902){
+        console.log('AAAAAAAAAAAAAA', 903);
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(6);
     }
@@ -391,7 +397,7 @@ $(".question-8 > div > div > .answers > div > div").click(function () {
 });
 
 
-// Q - 3
+// Q - 9
 let q9spotsPosition = [];
 function changeQ9SpotsPosition(){
     if(q9spotsPosition.length !== 0){
@@ -408,12 +414,12 @@ function changeQ9SpotsPosition(){
     }
 }
 
-$( ".draggable" ).draggable({
+$( ".draggable-9" ).draggable({
     containment: ".question-9 > div",
     // revert: true
 });
 
-$( ".droppable" ).droppable({
+$( ".droppable-9" ).droppable({
     drop: function( event, ui ) {
         q9spotsPosition.push([ui, $(this)]);
         let dragData = $(ui.helper[0]).data('name');
