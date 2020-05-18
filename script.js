@@ -45,7 +45,8 @@ $(".main-wrapper .enter-screen > span").click(function () {
 });
 
 // On Play
-$(".wrapper #vid-1 video").on("playing", function (e) {
+function onPlayingFunction(){
+    console.log("playing");
     if($(".wrapper #vid-1 video")[0].currentTime >= 541 && $(".wrapper #vid-1 video")[0].currentTime <= 542){
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(4);
@@ -58,12 +59,25 @@ $(".wrapper #vid-1 video").on("playing", function (e) {
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(6);
     }
+}
 
-
-});
+// $(".wrapper #vid-1 video").on("playing", function (e) {
+//     if($(".wrapper #vid-1 video")[0].currentTime >= 541 && $(".wrapper #vid-1 video")[0].currentTime <= 542){
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(4);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime >= 697 && $(".wrapper #vid-1 video")[0].currentTime <= 698){
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(5);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime >= 901 && $(".wrapper #vid-1 video")[0].currentTime <= 902){
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(6);
+//     }
+// });
 
 // On Seek
-$(".wrapper #vid-1 video").on("seeking", function (e) {
+function onSeekingFunction(){
     if($(".wrapper #vid-1 video")[0].currentTime < 131){
         console.log('AAAAAAAAAAAAAA', 131);
         $(".play-extra-video").css('display', 'none');
@@ -94,7 +108,40 @@ $(".wrapper #vid-1 video").on("seeking", function (e) {
         $(".play-extra-video").css('display', 'none');
         continueVideoPlay(6);
     }
-});
+}
+
+// $(".wrapper #vid-1 video").on("seeking", function (e) {
+//     if($(".wrapper #vid-1 video")[0].currentTime < 131){
+//         console.log('AAAAAAAAAAAAAA', 131);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(0);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime < 365 && $(".wrapper #vid-1 video")[0].currentTime > 132){
+//         console.log('AAAAAAAAAAAAAA', 365);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(2);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime < 541 && $(".wrapper #vid-1 video")[0].currentTime > 366){
+//         console.log('AAAAAAAAAAAAAA', 541);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(3);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime < 697 && $(".wrapper #vid-1 video")[0].currentTime > 542){
+//         console.log('AAAAAAAAAAAAAA', 697);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(4);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime < 901 && $(".wrapper #vid-1 video")[0].currentTime > 697){
+//         console.log('AAAAAAAAAAAAAA', 901);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(5);
+//     }
+//     if($(".wrapper #vid-1 video")[0].currentTime < 903 && $(".wrapper #vid-1 video")[0].currentTime > 902){
+//         console.log('AAAAAAAAAAAAAA', 903);
+//         $(".play-extra-video").css('display', 'none');
+//         continueVideoPlay(6);
+//     }
+// });
 
 
 function continueVideoPlay(qNumber) {

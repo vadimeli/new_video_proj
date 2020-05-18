@@ -15,7 +15,7 @@
     <div class="wrapper">
         <div class="enter-screen"><span>התחל</span></div>
         <div id="vid-1">
-            <video playsinline autoplay
+            <video playsinline onseeking="onSeekingFunction()" onplaying="onPlayingFunction()"
                    id="my-video"
                    class="video-js"
                    controls
