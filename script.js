@@ -63,7 +63,7 @@ $(".wrapper #vid-1 video").on("playing", function (e) {
 });
 
 // On Seek
-$(".wrapper #vid-1 video").on("seeked", function (e) {
+$(".wrapper #vid-1 video").on("seeking", function (e) {
     if($(".wrapper #vid-1 video")[0].currentTime < 131){
         console.log('AAAAAAAAAAAAAA', 131);
         $(".play-extra-video").css('display', 'none');
