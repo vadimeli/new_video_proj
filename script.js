@@ -222,7 +222,8 @@ var isAnswered = false;
 
 $(".close-q").click(function () {
     let qNumber = $(this).data('question');
-    if(isAnswered === true){
+    let isQuestionAnswered = $(this).data('answered');
+    if(isAnswered === true || isQuestionAnswered === true){
         continueVideoPlay(qNumber);
         isAnswered = false
     } else {
@@ -233,6 +234,8 @@ $(".close-q").click(function () {
 // Q - 1
 $(".question-1 > div > div > .answers > div").click(function () {
     isAnswered = true;
+    $(".question-1 > div > .close-q").data('answered', true);
+
    if($(this).data('answer') == true){
        $(this).css('background-color', '#aae322');
        $(this).append('<img src="assets/images/right.png"/>');
@@ -252,6 +255,8 @@ $(".question-1 > div > div > .answers > div").click(function () {
 // Q - 2
 $(".question-2 > div > div > .answers > div").click(function () {
     isAnswered = true;
+    $(".question-2 > div > .close-q").data('answered', true);
+
     if($(this).data('answer') == true){
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
@@ -328,6 +333,10 @@ $( ".droppable" ).droppable({
 });
 
 $(".question-3 > div > div > .answers > .check-answer").click(function () {
+    $( ".draggable" ).draggable({
+        disabled: true
+    });
+
     let isAllCorrect = true;
     $(".question-3 > div > div > .answers > span").each(function () {
         if($(this).data('answer') === 'true'){
@@ -339,6 +348,7 @@ $(".question-3 > div > div > .answers > .check-answer").click(function () {
     });
 
     isAnswered = true;
+    $(".question-3 > div > .close-q").data('answered', true);
 
     if(isAllCorrect === true){
         $(".question-3 > div > div > .answers > .check-answer").css('display', 'none');
@@ -357,6 +367,8 @@ $(".question-3 > div > div > .answers > .correct-answer").click(function () {
 // Q - 7
 $(".question-7 > div > div > .answers > div").click(function () {
     isAnswered = true;
+    $(".question-7 > div > .close-q").data('answered', true);
+
     if($(this).data('answer') == true){
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
@@ -382,11 +394,13 @@ $(".question-8 > div > div > .answers > div > div").click(function () {
         console.log(numberOfCurrectQ8);
         if(numberOfCurrectQ8 === 5){
             isAnswered = true;
+            $(".question-8 > div > .close-q").data('answered', true);
         }
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
     } else {
         isAnswered = true;
+        $(".question-8 > div > .close-q").data('answered', true);
         $(".question-8 > div > div > .answers > div > div").each(function () {
             if($(this).data('answer') == true){
                 $(this).css('background-color', '#aae322');
@@ -457,6 +471,10 @@ $( ".droppable-9" ).droppable({
 });
 
 $(".question-9 > div > div > .answers > .check-answer").click(function () {
+    $( ".draggable-9" ).draggable({
+        disabled: true
+    });
+
     let isAllCorrect = true;
     $(".question-9 > div > div > .answers > span").each(function () {
         if($(this).data('answer') === 'true'){
@@ -468,6 +486,7 @@ $(".question-9 > div > div > .answers > .check-answer").click(function () {
     });
 
     isAnswered = true;
+    $(".question-9 > div > .close-q").data('answered', true);
 
     if(isAllCorrect === true){
         $(".question-9 > div > div > .answers > .check-answer").css('display', 'none');
@@ -487,6 +506,8 @@ $(".question-9 > div > div > .answers > .correct-answer").click(function () {
 // Q - 10
 $(".question-10 > div > div > .answers > div").click(function () {
     isAnswered = true;
+    $(".question-10 > div > .close-q").data('answered', true);
+
     if($(this).data('answer') == true){
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
@@ -508,6 +529,8 @@ $(".question-10 > div > div > .answers > div").click(function () {
 // Q - 11
 $(".question-11 > div > div > .answers > div").click(function () {
     isAnswered = true;
+    $(".question-11 > div > .close-q").data('answered', true);
+
     if($(this).data('answer') == true){
         $(this).css('background-color', '#aae322');
         $(this).append('<img src="assets/images/right.png"/>');
@@ -531,6 +554,23 @@ function mainVideoEnded() {
         $(".wrapper #vid-1").css('display', 'none');
         $(".credits").css('display', 'flex');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
